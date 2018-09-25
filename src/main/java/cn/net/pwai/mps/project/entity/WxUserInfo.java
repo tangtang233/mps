@@ -14,6 +14,7 @@ import java.util.Date;
 @Entity
 @Table
 public class WxUserInfo implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GenericGenerator(name = "uuid", strategy = "uuid")
