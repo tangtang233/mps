@@ -1,6 +1,5 @@
 package cn.net.pwai.mps;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.*;
 @EnableTransactionManagement
 @EnableAutoConfiguration
 @ComponentScan(basePackages = {
-        "cn.net.pwai.mps.boot.controller", "cn.net.pwai.mps.boot.dao","templates"
+        "cn.net.pwai.mps.project.controller", "cn.net.pwai.mps.project.repository","templates"
 })
 public class MvcConfigurer implements WebMvcConfigurer {
     /*@Override

@@ -1,7 +1,7 @@
-package cn.net.pwai.mps.boot.controller;
+package cn.net.pwai.mps.project.controller;
 
-import cn.net.pwai.mps.boot.service.DemoService;
-import cn.net.pwai.mps.boot.service.DemoUserService;
+import cn.net.pwai.mps.project.service.DemoService;
+import cn.net.pwai.mps.project.service.DemoUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

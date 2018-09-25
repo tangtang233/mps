@@ -1,4 +1,4 @@
-package cn.net.pwai.mps.boot.entity;
+package cn.net.pwai.mps.project.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 

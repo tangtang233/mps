@@ -27,5 +27,6 @@ public class BootApplication {
         for (String beanName : beanNames) {
             logger.info(beanName);
         }
+        logger.info("mps服务启动完成。");
     }
 }

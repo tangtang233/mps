@@ -1,4 +1,4 @@
-package cn.net.pwai.mps.boot.service;
+package cn.net.pwai.mps.project.service;
 
 import org.springframework.stereotype.Service;
 
