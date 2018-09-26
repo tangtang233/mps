@@ -31,7 +31,8 @@ public class FastJsonConfiguration implements WebMvcConfigurer {
         fastJsonConfig.setSerializerFeatures(
                 SerializerFeature.DisableCircularReferenceDetect,
                 SerializerFeature.WriteMapNullValue,
-                SerializerFeature.WriteNullStringAsEmpty
+                SerializerFeature.WriteNullStringAsEmpty,
+                SerializerFeature.WriteDateUseDateFormat
         );
         fastConverter.setFastJsonConfig(fastJsonConfig);
 

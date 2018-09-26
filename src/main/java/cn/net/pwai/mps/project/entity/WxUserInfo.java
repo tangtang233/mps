@@ -7,7 +7,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * @author toby9
@@ -26,7 +27,7 @@ public class WxUserInfo implements Serializable {
     @NotNull
     private String id;
     @Column(nullable = false, columnDefinition = "datetime default NOW()")
-    private Date addTime = new Date();
+    private Timestamp addTime = new Timestamp(System.currentTimeMillis());
     @Column
     private Date birthday;
     @Column
@@ -123,11 +124,11 @@ public class WxUserInfo implements Serializable {
         this.delStatus = delStatus;
     }
 
-    public Date getAddTime() {
+    public Timestamp getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Date addTime) {
+    public void setAddTime(Timestamp addTime) {
         this.addTime = addTime;
     }
 }
