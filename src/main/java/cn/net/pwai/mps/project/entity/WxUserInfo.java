@@ -1,5 +1,7 @@
 package cn.net.pwai.mps.project.entity;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -13,6 +15,8 @@ import java.util.Date;
  */
 @Entity
 @Table
+@DynamicInsert
+@DynamicUpdate
 public class WxUserInfo implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -33,8 +37,7 @@ public class WxUserInfo implements Serializable {
     private String openId;
     @Column
     private String phone;
-    @Column
-    @NotNull
+    @Column(nullable = false,columnDefinition = "int default 0")
     private Integer delStatus;
 
     public WxUserInfo() {

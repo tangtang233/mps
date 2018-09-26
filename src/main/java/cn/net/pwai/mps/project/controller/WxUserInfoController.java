@@ -35,7 +35,7 @@ public class WxUserInfoController {
         return resultMap;
     }
 
-    @RequestMapping(value = "/findById",method = RequestMethod.POST)
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
     @LoggerManage(description = "通过id查找微信用户信息")
     public Map<String,Object> findById(String id) {
         Map<String,Object> resultMap = new HashMap<>();
