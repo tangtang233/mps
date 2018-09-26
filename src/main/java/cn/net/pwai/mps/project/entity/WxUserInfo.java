@@ -25,6 +25,8 @@ public class WxUserInfo implements Serializable {
     @GeneratedValue(generator = "uuid")
     @NotNull
     private String id;
+    @Column(nullable = false, columnDefinition = "datetime default NOW()")
+    private Date addTime = new Date();
     @Column
     private Date birthday;
     @Column
@@ -37,8 +39,8 @@ public class WxUserInfo implements Serializable {
     private String openId;
     @Column
     private String phone;
-    @Column(nullable = false,columnDefinition = "int default 0")
-    private Integer delStatus;
+    @Column(nullable = false, columnDefinition = "int default 0")
+    private Integer delStatus = 0;
 
     public WxUserInfo() {
     }
@@ -119,5 +121,13 @@ public class WxUserInfo implements Serializable {
 
     public void setDelStatus(Integer delStatus) {
         this.delStatus = delStatus;
+    }
+
+    public Date getAddTime() {
+        return addTime;
+    }
+
+    public void setAddTime(Date addTime) {
+        this.addTime = addTime;
     }
 }
