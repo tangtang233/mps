@@ -1,7 +1,10 @@
 package cn.net.pwai.mps.project.repository;
 
 import cn.net.pwai.mps.project.entity.WxUserInfo;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 /**
  * @author tangwei
@@ -13,4 +16,6 @@ public interface WxUserInfoRepository extends JpaRepository<WxUserInfo, String> 
     WxUserInfo findWxUserInfoByOpenId(String openId);
 
     WxUserInfo findWxUserInfoByPhone(String phone);
+
+    List<WxUserInfo> findAllByDelStatusOrderByAddTimeDesc(Integer delStatus);
 }

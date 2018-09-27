@@ -5,6 +5,7 @@ import cn.net.pwai.mps.project.entity.WxUserInfo;
 import cn.net.pwai.mps.project.repository.WxUserInfoRepository;
 import cn.net.pwai.mps.project.service.WxUserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,6 +42,15 @@ public class WxUserInfoController {
         Map<String,Object> resultMap = new HashMap<>();
         resultMap.put("status","success");
         resultMap.put("content",wxUserInfoRepository.findWxUserInfoById(id));
+        return resultMap;
+    }
+
+    @RequestMapping(value = "/findAllUsefulInfo",method = RequestMethod.GET)
+    @LoggerManage(description = "查询出所有有效的微信用户信息")
+    public Map<String,Object> findAllUsefulInfo() {
+        Map<String,Object> resultMap = new HashMap<>();
+        resultMap.put("status","success");
+        resultMap.put("content",wxUserInfoRepository.findAllByDelStatusOrderByAddTimeDesc(0));
         return resultMap;
     }
 }
