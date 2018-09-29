@@ -19,7 +19,7 @@ public class DemoController {
     @Autowired
     private DemoUserService demoCommonService;
 
-    @RequestMapping("/index")
+    @RequestMapping("/superadmin/index")
     public Map<String,Object> index() {
         Map<String,Object> resultMap = new HashMap<>();
         resultMap.put("status","success");

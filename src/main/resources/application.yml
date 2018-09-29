@@ -42,5 +42,8 @@ logging:
   path: c:\\mps-log
   level:
     root: warn
-    org.springframework.web: info
-    org.hibernate: error
+    org:
+      springframework:
+        web: info
+        security: info
+      hibernate: error
