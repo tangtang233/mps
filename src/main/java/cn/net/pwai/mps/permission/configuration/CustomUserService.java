@@ -1,7 +1,9 @@
-package cn.net.pwai.mps.permission.service;
+package cn.net.pwai.mps.permission.configuration;
 
 import cn.net.pwai.mps.permission.entity.SysUser;
 import cn.net.pwai.mps.permission.repository.SysUserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,6 +14,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
  * @date 2018/9/27
  */
 public class CustomUserService implements UserDetailsService {
+
+    private static Logger logger = LoggerFactory.getLogger(CustomUserService.class);
+
     @Autowired
     SysUserRepository userRepository;
 
@@ -21,8 +26,8 @@ public class CustomUserService implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException("用户名不存在");
         }
-        System.out.println("s:" + s);
-        System.out.println("username:" + user.getUsername() + ";password:" + user.getPassword());
+        logger.info("用户:" + s + "登录...");
+        logger.debug("username:" + user.getUsername() + ";password:" + user.getPassword());
         return user;
     }
 }
